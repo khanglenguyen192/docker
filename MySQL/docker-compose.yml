@@ -1,0 +1,18 @@
+version: 'lastest'
+services:
+  db:
+    image: mysql
+    container_name: mysql_db
+    restart: always
+    port:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_USER: root
+      MYSQL_ROOT_PASSWORD: 123456
+    network:
+      - local-network
+
+networks:
+  local-network:
+    driver: bridge
+    
