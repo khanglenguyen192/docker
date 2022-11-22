@@ -1,0 +1,13 @@
+docker pull flowable/all-in-one
+docker run --name flowable -p 8888:8080 flowable/all-in-one
+
+Include Flowable apps
+Flowable IDM http://localhost:8888/flowable-idm
+Flowable Modeler http://localhost:8888/flowable-modeler
+Flowable Task http://localhost:8888/flowable-task
+Flowable Admin http://localhost:8888/flowable-admin
+Default user
+user: admin
+password: test
+
+https://github.com/flowable/flowable-engine/tree/master/docker

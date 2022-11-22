@@ -3,3 +3,6 @@ cd /opt/bitnami/kafka/bin
 
 View message in topic:
 /opt/bitnami/kafka/bin/kafka-console-consumer.sh --bootstrap-server 127.0.0.1:9092 --topic [TOPIC] --from-beginning
+
+kafka magic:
+docker pull digitsy/kafka-magic
