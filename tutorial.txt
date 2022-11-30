@@ -1,0 +1,53 @@
+Download image: docker pull <image>
+		or docker pull <image>:<tag>
+Upload image to registry: docker push <image>
+		or docker push <image>:<tag>
+Remove all image: docker prune
+Stop running container: docker stop <Container ID>
+Run a command inside a container: docker exec <Container ID> <command>
+Run a image: docker run <image>
+Remove all container: docker container prune
+
+DOCKER CANNOT START ON WINDOW:
+"C:\Program Files\Docker\Docker\DockerCli.exe" -SwitchDaemon
+
+Port mapping example: docker run -p 80:80 -d nginx
+Log: docker log -f <Container ID>
+Show running container: docker ps
+Show image: docker images
+
+LƯU DỮ LIỆU BÊN TRONG CONTAINER:
+Thao tác đem volume gắn vào container là bind mount
+Syntax:
+docker volume create [volume_name]
+docker run -v [local_dir/volume]:[container_dir] ...
+Example:
+docker volume create pgdata
+docker run -v pgdata:/var/lib/postgresql/data -p 5432:5432 postgres (thư mục ảo)
+or: docker run -v /usr/data:/var/lib/postgresql/data -p 5432:5432 postgres (thư mục thật, chỉ cho Linux)
+
+DOCKER FILE
+Example:
+FROM alpine:latest
+RUN apk add bash
+CMD ["bash"]
+
+Syntax:
+docker build -t <image_name>:<tag> .
+-> dấu . là build context
+Build context là toàn bộ nội dung bên trong thư mục chứa docker file, bao gồm cả docker file.
+.dockerignore : sẽ bỏ qua những file ở bên trong trước khi gửi đến docker Daemon, tương tự .gitignore
+
+DOCKER FILE KEYWORDS:
+FROM <image>
+RUN <command>
+WORKDIR <directory> : tạo thư mục và đặt thư mục đó thành thư mục khởi tạo
+COPY <src> <dest>
+ADD <src/URL> <dest>
+EXPOSE <port>
+CMD command argument1 argument2...
+CMD ["command", "argument1", "argument2",...]
+
+PUSHING IMAGE
+Login: docker login
+Push image: docker push <image>:<tag>
