@@ -1,1 +1,7 @@
-docker pull jenkins
+docker pull jenkins/jenkins
+
+docker run --name jenkins -p 8000:8080 jenkins/jenkins
+docker exec -it jenkins bash
+Get password jenkins:
+cd var/jenkins_home/secrets
+cat initialAdminPassword
