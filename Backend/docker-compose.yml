@@ -1,7 +1,7 @@
 version: "1.0"
 services:
   backend:
-    image: backend:1.0
+    image: khanglenguyen192/backend:1.0
     container_name: backend
     volumes:
       - ./volumes/backend-data:/app/UserData
