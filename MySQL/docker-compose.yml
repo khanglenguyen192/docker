@@ -4,15 +4,14 @@ services:
     image: mysql
     container_name: mysql_db
     restart: always
-    port:
+    ports:
       - "3306:3306"
     environment:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: 123456
-    network:
+    networks:
       - local-network
 
 networks:
   local-network:
     driver: bridge
-    
