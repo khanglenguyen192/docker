@@ -1,7 +1,7 @@
 version: "1.0"
 services:
   backend:
-    image: khanglenguyen192/backend:1.0
+    image: khanglenguyen192/backend:${IMAGE_TAG:-latest}
     container_name: backend
     volumes:
       - ./volumes/backend-data:/app/UserData
