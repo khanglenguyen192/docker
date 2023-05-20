@@ -11,8 +11,8 @@ services:
     environment:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: 123456
-    networks:
-      - local-network
+    # networks:
+    #   - local-network
 
 # networks:
 #   local-network:
