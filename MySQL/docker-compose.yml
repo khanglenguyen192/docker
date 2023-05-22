@@ -11,6 +11,11 @@ services:
     environment:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: 123456
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "$ADMINER_DOCKER_PORT:8080"
     # networks:
     #   - local-network
 
