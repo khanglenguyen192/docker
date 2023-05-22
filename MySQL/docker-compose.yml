@@ -11,4 +11,4 @@ services:
     environment:
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: 123456
-      MYSQL_HOST: 0.0.0.0
+      MYSQL_PASSWORD: 123456
