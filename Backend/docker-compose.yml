@@ -2,6 +2,7 @@ version: "1.0"
 services:
   backend:
     image: khanglenguyen192/backend:${IMAGE_TAG:-latest}
+    restart: always
     container_name: backend
     volumes:
       - ./volumes/backend-data:/app/UserData
